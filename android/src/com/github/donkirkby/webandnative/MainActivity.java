@@ -4,13 +4,17 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
+    private TextView greetingText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        greetingText = (TextView)findViewById(R.id.textView1);
     }
 
     @Override
@@ -30,5 +34,9 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void next(View view) {
+        greetingText.setText("Good-bye");
     }
 }
