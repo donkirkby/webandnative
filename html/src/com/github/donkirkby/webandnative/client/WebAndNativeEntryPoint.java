@@ -1,5 +1,7 @@
 package com.github.donkirkby.webandnative.client;
 
+import java.util.Arrays;
+
 import com.github.donkirkby.webandnative.Greeter;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -17,7 +19,9 @@ public class WebAndNativeEntryPoint implements EntryPoint {
      * This is the entry point method.
      */
     public void onModuleLoad() {
+        String greetings = Assets.INSTANCE.greetings().getText();
         final Greeter greeter = new Greeter();
+        greeter.loadGreetings(Arrays.asList(greetings.split("\\n")));
         
         final TextBox nameField = new TextBox();
         final Button greetButton = new Button("Greet");

@@ -1,5 +1,11 @@
 package com.github.donkirkby.webandnative;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,6 +25,22 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         greetingText = (TextView)findViewById(R.id.textView1);
         nameText = (EditText)findViewById(R.id.editText1);
+        List<String> greetings = new ArrayList<String>();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    getAssets().open("greetings.txt")));
+            try {
+                String line;
+                while (null != (line = reader.readLine())) {
+                    greetings.add(line);
+                }
+            } finally {
+                reader.close();
+            }
+        } catch (IOException e) {
+            greetings.add("Failed to open file. " + e.getMessage());
+        }
+        greeter.loadGreetings(greetings);
         greet("World");
     }
 
