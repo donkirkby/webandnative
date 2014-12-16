@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
     private TextView greetingText;
+    private EditText nameText;
+    private Greeter greeter = new Greeter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         greetingText = (TextView)findViewById(R.id.textView1);
+        nameText = (EditText)findViewById(R.id.editText1);
+        greet("World");
     }
 
     @Override
@@ -36,7 +41,11 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    public void next(View view) {
-        greetingText.setText("Good-bye");
+    public void greet(View view) {
+        greet(nameText.getText().toString());
+    }
+    
+    private void greet(String name) {
+        greetingText.setText(greeter.greet(name));
     }
 }

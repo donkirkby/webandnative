@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Web / Android Native</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="instructions">Type your name</string>
     <string name="action_settings">Settings</string>
 
 </resources>

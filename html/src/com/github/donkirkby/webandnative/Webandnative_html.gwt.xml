@@ -18,13 +18,13 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
+  <inherits name='com.github.donkirkby.Webandnative_core'/>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.github.donkirkby.webandnative.client.WebAndNativeEntryPoint'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
-  <source path='shared'/>
 
   <!-- allow Super Dev Mode -->
   <add-linker name="xsiframe"/>
