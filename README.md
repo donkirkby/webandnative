@@ -44,7 +44,7 @@ deploying to iOS:
     * Good: documentation looks good, so far.
     * Good: labels and text fields are easy.
     * Bad: no support for HTML yet. Might be able to merge with
-      [CodeSkulptor][skulpt] or [Brython][brython]. I created issue
+      [CodeSkulptor][skulpt], [Pyjs][pyjs], or [Brython][brython]. I created issue
       kivy/kivy#2715 requesting HTML support, but it was declined.
 * [libgdx][libgdx] is the first platform I tried. It's written in Java and
   compiled with GWT into Javascript for the HTML platform.
@@ -73,6 +73,7 @@ deploying to iOS:
 [kivy]: http://kivy.org
 [skulpt]: http://www.codeskulptor.org/
 [brython]: http://www.brython.info/
+[pyjs]: http://pyjs.org/
 [inbox]: http://gmailblog.blogspot.ca/2014/11/going-under-hood-of-inbox.html
 [j2objc]: https://github.com/google/j2objc
 [exporter]: https://code.google.com/p/gwt-exporter/
